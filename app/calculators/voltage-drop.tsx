@@ -20,7 +20,7 @@ function parseNum(text: string): number {
 
 const EXAMPLES = [
   { label: 'Iluminación', powerW: 500, lengthM: 15, section: 1.5 },
-  { label: 'Tomacorrientes', powerW: 2200, lengthM: 20, section: 2.5 },
+  { label: 'Tomas', powerW: 2200, lengthM: 20, section: 2.5 },
   { label: 'Aire acond.', powerW: 3500, lengthM: 10, section: 2.5 },
   { label: 'Taller', powerW: 5000, lengthM: 30, section: 6 },
 ];
@@ -77,12 +77,12 @@ export default function VoltageDropScreen() {
       >
         <FormCard>
           <ToggleGroup
-            label="Tipo de Circuito"
+            label="Tipo de circuito"
             value={circuitType}
             onChange={setCircuitType}
             options={[
-              { value: 'single', label: 'Monofásico 220 V' },
-              { value: 'three', label: 'Trifásico 380 V' },
+              { value: 'single', label: 'Mono 220 V' },
+              { value: 'three', label: 'Tri 380 V' },
             ]}
           />
 
@@ -101,8 +101,8 @@ export default function VoltageDropScreen() {
             value={mode}
             onChange={setMode}
             options={[
-              { value: 'power', label: 'Por Potencia (W)' },
-              { value: 'current', label: 'Por Corriente (A)' },
+              { value: 'power', label: 'Potencia (W)' },
+              { value: 'current', label: 'Corriente (A)' },
             ]}
           />
 
@@ -130,31 +130,38 @@ export default function VoltageDropScreen() {
             hint="Distancia desde el tablero hasta la carga (un sentido)."
           />
 
-          <View style={styles.row}>
-            <SelectField
-              label="Sección (mm²)"
-              value={section}
-              onChange={setSection}
-              options={sections.map((s) => ({
-                value: s,
-                label: `${s} mm²`,
-              }))}
-            />
-            <TextField
-              label="Factor de Potencia"
-              value={fpText}
-              onChangeText={setFpText}
-              hint="1.0 resist. · 0.85 A/A · 0.80 motores"
-            />
-          </View>
+          <SelectField
+            label="Sección del cable (mm²)"
+            value={section}
+            onChange={setSection}
+            options={sections.map((s) => ({
+              value: s,
+              label: `${s} mm²`,
+            }))}
+          />
+
+          <TextField
+            label="Factor de potencia"
+            value={fpText}
+            onChangeText={setFpText}
+            hint="1.0 resistivo · 0.85 A/A · 0.80 motores"
+          />
 
           <SelectField
             label="Límite AEA 90364"
             value={limit}
             onChange={setLimit}
             options={[
-              { value: 3, label: '3% — iluminación / tomacorrientes' },
-              { value: 5, label: '5% — motores / caída total' },
+              {
+                value: 3,
+                summary: '3% — iluminación / tomas',
+                label: '3% — iluminación / tomacorrientes',
+              },
+              {
+                value: 5,
+                summary: '5% — motores / total',
+                label: '5% — motores / caída total',
+              },
             ]}
             hint="Circuitos terminales típicos: 3%. Motores o suma total: 5%."
           />
@@ -181,7 +188,9 @@ export default function VoltageDropScreen() {
                     setLimit(3);
                   }}
                 >
-                  <Text style={styles.exampleTitle}>{ex.label}</Text>
+                  <Text style={styles.exampleTitle} numberOfLines={2}>
+                    {ex.label}
+                  </Text>
                   <Text style={styles.exampleMeta}>
                     {ex.powerW} W · {ex.lengthM} m · {ex.section} mm²
                   </Text>
@@ -190,7 +199,6 @@ export default function VoltageDropScreen() {
             </ScrollView>
           </View>
         </FormCard>
-
         <VoltageDropResultPanel
           result={result}
           sectionMm2={section}
@@ -209,11 +217,6 @@ export default function VoltageDropScreen() {
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: colors.bg },
   content: { padding: space.md, gap: space.md, paddingBottom: space.xxl },
-  row: {
-    flexDirection: 'row',
-    gap: 12,
-    alignItems: 'flex-start',
-  },
   examples: { gap: space.sm },
   examplesTitle: {
     fontFamily: fonts.display,
@@ -226,7 +229,8 @@ const styles = StyleSheet.create({
     paddingRight: space.md,
   },
   exampleCard: {
-    width: 168,
+    width: 152,
+    minHeight: 88,
     backgroundColor: colors.bg,
     borderWidth: 1,
     borderColor: colors.line,
@@ -238,12 +242,14 @@ const styles = StyleSheet.create({
   exampleTitle: {
     fontFamily: fonts.bodySemi,
     fontSize: 13,
+    lineHeight: 17,
     color: colors.ink,
     marginBottom: 6,
   },
   exampleMeta: {
     fontFamily: fonts.body,
     fontSize: 12,
+    lineHeight: 16,
     color: colors.inkMuted,
   },
 });

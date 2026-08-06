@@ -71,8 +71,8 @@ export default function PowerScreen() {
             }}
             options={[
               { value: 'dc', label: 'DC' },
-              { value: 'ac_single', label: 'AC mono 220 V' },
-              { value: 'ac_three', label: 'AC tri 380 V' },
+              { value: 'ac_single', label: 'AC mono' },
+              { value: 'ac_three', label: 'AC tri' },
             ]}
           />
 
@@ -81,9 +81,9 @@ export default function PowerScreen() {
             value={solveFor}
             onChange={setSolveFor}
             options={[
-              { value: 'current', label: 'Corriente (A)' },
-              { value: 'power', label: 'Potencia (W)' },
-              { value: 'voltage', label: 'Voltaje (V)' },
+              { value: 'current', label: 'Corriente' },
+              { value: 'power', label: 'Potencia' },
+              { value: 'voltage', label: 'Voltaje' },
             ]}
           />
 
@@ -160,7 +160,9 @@ export default function PowerScreen() {
                       setFpText(String(a.fp));
                     }}
                   >
-                    <Text style={styles.exampleTitle}>{a.label}</Text>
+                    <Text style={styles.exampleTitle} numberOfLines={2}>
+                      {a.label}
+                    </Text>
                     <Text style={styles.exampleMeta}>
                       {a.powerW} W → {amps.toFixed(1)} A
                     </Text>
@@ -207,7 +209,8 @@ const styles = StyleSheet.create({
     paddingRight: space.md,
   },
   exampleCard: {
-    width: 168,
+    width: 156,
+    minHeight: 92,
     backgroundColor: colors.bg,
     borderWidth: 1,
     borderColor: colors.line,
@@ -219,12 +222,14 @@ const styles = StyleSheet.create({
   exampleTitle: {
     fontFamily: fonts.bodySemi,
     fontSize: 13,
+    lineHeight: 17,
     color: colors.ink,
     marginBottom: 6,
   },
   exampleMeta: {
     fontFamily: fonts.body,
     fontSize: 12,
+    lineHeight: 16,
     color: colors.inkMuted,
   },
   exampleFp: {

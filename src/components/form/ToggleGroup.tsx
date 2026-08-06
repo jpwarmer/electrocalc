@@ -34,7 +34,10 @@ export function ToggleGroup<T extends string>({
               accessibilityRole="button"
               accessibilityState={{ selected: active }}
             >
-              <Text style={[styles.btnText, active && styles.btnTextActive]}>
+              <Text
+                style={[styles.btnText, active && styles.btnTextActive]}
+                numberOfLines={2}
+              >
                 {opt.label}
               </Text>
             </Pressable>
@@ -58,11 +61,13 @@ const styles = StyleSheet.create({
   },
   btn: {
     flex: 1,
+    minWidth: 0,
     backgroundColor: '#F1F5F9',
     borderRadius: radii.md,
-    paddingVertical: 14,
-    paddingHorizontal: 10,
+    paddingVertical: 12,
+    paddingHorizontal: 8,
     alignItems: 'center',
+    justifyContent: 'center',
     borderWidth: 1,
     borderColor: 'transparent',
   },
@@ -72,7 +77,8 @@ const styles = StyleSheet.create({
   },
   btnText: {
     fontFamily: fonts.bodyMedium,
-    fontSize: 14,
+    fontSize: 13,
+    lineHeight: 17,
     color: colors.ink,
     textAlign: 'center',
   },

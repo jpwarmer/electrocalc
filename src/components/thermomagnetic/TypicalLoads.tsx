@@ -41,7 +41,9 @@ export function TypicalLoads({ onSelect }: Props) {
             }
             style={styles.card}
           >
-            <Text style={styles.cardTitle}>{load.label}</Text>
+            <Text style={styles.cardTitle} numberOfLines={2}>
+              {load.label}
+            </Text>
             <Text style={styles.cardMeta}>
               {load.powerW} W · FP {load.powerFactor.toFixed(2)}
             </Text>
@@ -67,7 +69,8 @@ const styles = StyleSheet.create({
     paddingRight: space.md,
   },
   card: {
-    width: 168,
+    width: 156,
+    minHeight: 78,
     backgroundColor: colors.surfaceRaised,
     borderWidth: 1,
     borderColor: colors.line,
@@ -79,12 +82,14 @@ const styles = StyleSheet.create({
   cardTitle: {
     fontFamily: fonts.bodySemi,
     fontSize: 13,
+    lineHeight: 17,
     color: colors.ink,
     marginBottom: 6,
   },
   cardMeta: {
     fontFamily: fonts.body,
     fontSize: 12,
+    lineHeight: 16,
     color: colors.inkMuted,
   },
 });

@@ -28,21 +28,62 @@ function parseNum(text: string): number {
 
 const METHOD_OPTIONS: {
   value: CableInstallationMethodId;
+  summary: string;
   label: string;
 }[] = [
-  { value: 'A', label: 'Mét. A · ×0.87 — embutido en pared sin caño' },
-  { value: 'B1', label: 'Mét. B1 · ×1.00 — en caño en/sobre pared (base)' },
-  { value: 'E', label: 'Mét. E · ×1.40 — al aire libre' },
-  { value: 'D', label: 'Mét. D · ×0.90 — enterrado en suelo' },
+  {
+    value: 'A',
+    summary: 'Mét. A · ×0.87',
+    label: 'Mét. A · ×0.87 — embutido en pared sin caño',
+  },
+  {
+    value: 'B1',
+    summary: 'Mét. B1 · ×1.00',
+    label: 'Mét. B1 · ×1.00 — en caño en/sobre pared (base)',
+  },
+  {
+    value: 'E',
+    summary: 'Mét. E · ×1.40',
+    label: 'Mét. E · ×1.40 — al aire libre',
+  },
+  {
+    value: 'D',
+    summary: 'Mét. D · ×0.90',
+    label: 'Mét. D · ×0.90 — enterrado en suelo',
+  },
 ];
 
 const CIRCUIT_COUNT_OPTIONS = [
-  { value: 1, label: '1 circuito — ×1.00 (sin derating)' },
-  { value: 2, label: '2 circuitos — ×0.80 (−20%)' },
-  { value: 3, label: '3 circuitos — ×0.70 (−30%) · máximo para generales' },
-  { value: 4, label: '4 circuitos — ×0.65 (−35%)' },
-  { value: 5, label: '5 circuitos — ×0.60 (−40%)' },
-  { value: 6, label: '6 o más — ×0.57 (−43%)' },
+  {
+    value: 1,
+    summary: '1 circuito — ×1.00',
+    label: '1 circuito — ×1.00 (sin derating)',
+  },
+  {
+    value: 2,
+    summary: '2 circuitos — ×0.80',
+    label: '2 circuitos — ×0.80 (−20%)',
+  },
+  {
+    value: 3,
+    summary: '3 circuitos — ×0.70',
+    label: '3 circuitos — ×0.70 (−30%) · máximo para generales',
+  },
+  {
+    value: 4,
+    summary: '4 circuitos — ×0.65',
+    label: '4 circuitos — ×0.65 (−35%)',
+  },
+  {
+    value: 5,
+    summary: '5 circuitos — ×0.60',
+    label: '5 circuitos — ×0.60 (−40%)',
+  },
+  {
+    value: 6,
+    summary: '6 o más — ×0.57',
+    label: '6 o más — ×0.57 (−43%)',
+  },
 ];
 
 const TEMP_LABELS: Record<number, string> = {
@@ -170,8 +211,8 @@ export default function CableSectionScreen() {
               setActivePreset(null);
             }}
             options={[
-              { value: 'power', label: 'Por Potencia (W)' },
-              { value: 'current', label: 'Por Corriente (A)' },
+              { value: 'power', label: 'Potencia (W)' },
+              { value: 'current', label: 'Corriente (A)' },
             ]}
           />
 
@@ -198,12 +239,12 @@ export default function CableSectionScreen() {
           )}
 
           <ToggleGroup
-            label="Tipo de Circuito"
+            label="Tipo de circuito"
             value={circuitType}
             onChange={setCircuitType}
             options={[
-              { value: 'single', label: 'Monofásico 220 V' },
-              { value: 'three', label: 'Trifásico 380 V' },
+              { value: 'single', label: 'Mono 220 V' },
+              { value: 'three', label: 'Tri 380 V' },
             ]}
           />
 
@@ -223,24 +264,37 @@ export default function CableSectionScreen() {
             onChange={setCircuitKind}
             options={kinds.map((k) => ({
               value: k.id as CircuitKindId,
+              summary: k.label,
               label: `${k.label}${k.minSectionMm2 ? ` (mín. ${k.minSectionMm2} mm²)` : ''}`,
             }))}
           />
 
           <SelectField
-            label="Factor de Potencia"
+            label="Factor de potencia"
             value={fpText}
             onChange={setFpText}
             options={[
-              { value: '1', label: '1.0 — resistivo (calefactores, duchas)' },
-              { value: '0.85', label: '0.85 — compresores / A·A' },
-              { value: '0.8', label: '0.80 — motores industriales' },
+              {
+                value: '1',
+                summary: '1.0 — resistivo',
+                label: '1.0 — resistivo (calefactores, duchas)',
+              },
+              {
+                value: '0.85',
+                summary: '0.85 — A/A',
+                label: '0.85 — compresores / A·A',
+              },
+              {
+                value: '0.8',
+                summary: '0.80 — motores',
+                label: '0.80 — motores industriales',
+              },
             ]}
-            hint="También podés ajustar el valor según la carga real."
+            hint="Podés elegir el valor típico según la carga."
           />
 
           <SelectField
-            label="Método de Instalación del Cable"
+            label="Método de instalación del cable"
             value={method}
             onChange={setMethod}
             options={METHOD_OPTIONS}
@@ -248,7 +302,7 @@ export default function CableSectionScreen() {
           />
 
           <SelectField
-            label="Temperatura Ambiente (°C)"
+            label="Temperatura ambiente (°C)"
             value={ambientTempC}
             onChange={setAmbientTempC}
             options={temps.map((t) => ({
@@ -258,11 +312,11 @@ export default function CableSectionScreen() {
           />
 
           <SelectField
-            label="Circuitos en la Misma Cañería"
+            label="Circuitos en la misma cañería"
             value={circuitsInConduit}
             onChange={setCircuitsInConduit}
             options={CIRCUIT_COUNT_OPTIONS}
-            hint="AEA 90364-7-771: máx. 3 circuitos generales por cañería. Circuitos especiales en cañería propia."
+            hint="AEA 90364-7-771: máx. 3 circuitos generales por cañería. Especiales en cañería propia."
           />
         </FormCard>
 

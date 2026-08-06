@@ -12,7 +12,10 @@ import { colors, fonts, radii, space } from '@/src/theme';
 
 export type SelectOption<T extends string | number> = {
   value: T;
+  /** Texto completo (lista del modal). */
   label: string;
+  /** Texto corto en el campo cerrado. Si no hay, usa label. */
+  summary?: string;
 };
 
 type Props<T extends string | number> = {
@@ -32,6 +35,7 @@ export function SelectField<T extends string | number>({
 }: Props<T>) {
   const [open, setOpen] = useState(false);
   const selected = options.find((o) => o.value === value);
+  const triggerLabel = selected?.summary ?? selected?.label ?? 'Elegir…';
 
   return (
     <View style={styles.wrap}>
@@ -41,9 +45,7 @@ export function SelectField<T extends string | number>({
         style={styles.trigger}
         accessibilityRole="button"
       >
-        <Text style={styles.triggerText} numberOfLines={1}>
-          {selected?.label ?? 'Elegir…'}
-        </Text>
+        <Text style={styles.triggerText}>{triggerLabel}</Text>
         <Text style={styles.chevron}>▾</Text>
       </Pressable>
       {hint ? <Text style={styles.hint}>{hint}</Text> : null}
@@ -76,7 +78,10 @@ export function SelectField<T extends string | number>({
                     style={[styles.option, active && styles.optionActive]}
                   >
                     <Text
-                      style={[styles.optionText, active && styles.optionTextActive]}
+                      style={[
+                        styles.optionText,
+                        active && styles.optionTextActive,
+                      ]}
                     >
                       {opt.label}
                     </Text>
@@ -92,7 +97,7 @@ export function SelectField<T extends string | number>({
 }
 
 const styles = StyleSheet.create({
-  wrap: { gap: space.sm, flex: 1, minWidth: 0 },
+  wrap: { gap: space.sm, minWidth: 0 },
   label: {
     fontFamily: fonts.bodySemi,
     fontSize: 14,
@@ -106,18 +111,22 @@ const styles = StyleSheet.create({
     borderRadius: radii.md,
     backgroundColor: colors.surfaceRaised,
     paddingHorizontal: 14,
+    paddingVertical: 12,
     minHeight: 48,
+    gap: 8,
   },
   triggerText: {
     flex: 1,
+    flexShrink: 1,
     fontFamily: fonts.body,
     fontSize: 15,
+    lineHeight: 20,
     color: colors.ink,
   },
   chevron: {
     fontSize: 14,
     color: colors.inkMuted,
-    marginLeft: 8,
+    lineHeight: 20,
   },
   hint: {
     fontFamily: fonts.body,
@@ -179,7 +188,7 @@ const styles = StyleSheet.create({
     fontFamily: fonts.body,
     fontSize: 15,
     color: colors.ink,
-    lineHeight: 20,
+    lineHeight: 21,
   },
   optionTextActive: {
     fontFamily: fonts.bodySemi,

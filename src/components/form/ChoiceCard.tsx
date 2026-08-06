@@ -36,7 +36,12 @@ export function ChoiceCard({
       ]}
     >
       {icon ? <Text style={styles.icon}>{icon}</Text> : null}
-      <Text style={[styles.title, selected && { color: accent }]}>{title}</Text>
+      <Text
+        style={[styles.title, selected && { color: accent }]}
+        numberOfLines={2}
+      >
+        {title}
+      </Text>
       {subtitle ? (
         <Text style={styles.subtitle} numberOfLines={2}>
           {subtitle}
@@ -64,6 +69,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: fonts.bodySemi,
     fontSize: 14,
+    lineHeight: 18,
     color: colors.ink,
   },
   subtitle: {

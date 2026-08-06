@@ -41,7 +41,7 @@ export function TextField({
 }
 
 const styles = StyleSheet.create({
-  wrap: { gap: space.sm, flex: 1 },
+  wrap: { gap: space.sm, minWidth: 0 },
   label: {
     fontFamily: fonts.bodySemi,
     fontSize: 14,
@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
+    minWidth: 0,
     fontFamily: fonts.body,
     fontSize: 16,
     color: colors.ink,
