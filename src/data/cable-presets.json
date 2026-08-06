@@ -1,0 +1,109 @@
+{
+  "general": [
+    {
+      "id": "light_500",
+      "title": "Iluminación",
+      "subtitle": "500W",
+      "icon": "💡",
+      "powerW": 500,
+      "powerFactor": 1,
+      "circuitType": "single",
+      "circuitKind": "lighting",
+      "mode": "power"
+    },
+    {
+      "id": "outlets_3520",
+      "title": "Tomacorrientes",
+      "subtitle": "3520W",
+      "icon": "🔌",
+      "powerW": 3520,
+      "powerFactor": 1,
+      "circuitType": "single",
+      "circuitKind": "outlets",
+      "mode": "power"
+    },
+    {
+      "id": "ac_2200",
+      "title": "Aire acond.",
+      "subtitle": "2200W · fp 0.85",
+      "icon": "❄️",
+      "powerW": 2200,
+      "powerFactor": 0.85,
+      "circuitType": "single",
+      "circuitKind": "ac",
+      "mode": "power"
+    },
+    {
+      "id": "oven_2500",
+      "title": "Horno",
+      "subtitle": "2500W",
+      "icon": "🔥",
+      "powerW": 2500,
+      "powerFactor": 1,
+      "circuitType": "single",
+      "circuitKind": "oven",
+      "mode": "power"
+    },
+    {
+      "id": "shower_5500",
+      "title": "Ducha",
+      "subtitle": "5500W",
+      "icon": "🚿",
+      "powerW": 5500,
+      "powerFactor": 1,
+      "circuitType": "single",
+      "circuitKind": "shower",
+      "mode": "power"
+    }
+  ],
+  "ev": [
+    {
+      "id": "ev_mode2",
+      "title": "Enchufe (Modo 2)",
+      "subtitle": "~2.2 kW · 10A · mono",
+      "icon": "🔌",
+      "powerW": 2200,
+      "currentA": 10,
+      "powerFactor": 1,
+      "circuitType": "single",
+      "circuitKind": "ev",
+      "mode": "current"
+    },
+    {
+      "id": "ev_7_4",
+      "title": "Wallbox 7.4 kW",
+      "subtitle": "32A · monofásico",
+      "icon": "🔌",
+      "powerW": 7400,
+      "currentA": 32,
+      "powerFactor": 1,
+      "circuitType": "single",
+      "circuitKind": "ev",
+      "mode": "current"
+    },
+    {
+      "id": "ev_11",
+      "title": "Wallbox 11 kW",
+      "subtitle": "16A · trifásico",
+      "icon": "🔌",
+      "powerW": 11000,
+      "currentA": 16,
+      "powerFactor": 1,
+      "circuitType": "three",
+      "circuitKind": "ev",
+      "mode": "current"
+    },
+    {
+      "id": "ev_22",
+      "title": "Wallbox 22 kW",
+      "subtitle": "32A · trifásico",
+      "icon": "🔌",
+      "powerW": 22000,
+      "currentA": 32,
+      "powerFactor": 1,
+      "circuitType": "three",
+      "circuitKind": "ev",
+      "mode": "current"
+    }
+  ]
+}

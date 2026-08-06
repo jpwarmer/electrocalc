@@ -1,0 +1,18 @@
+{
+  "pvc": [
+    { "ambientC": 25, "factor": 1.06 },
+    { "ambientC": 30, "factor": 1.0 },
+    { "ambientC": 35, "factor": 0.94 },
+    { "ambientC": 40, "factor": 0.87 },
+    { "ambientC": 45, "factor": 0.79 },
+    { "ambientC": 50, "factor": 0.71 }
+  ],
+  "xlpe": [
+    { "ambientC": 25, "factor": 1.04 },
+    { "ambientC": 30, "factor": 1.0 },
+    { "ambientC": 35, "factor": 0.96 },
+    { "ambientC": 40, "factor": 0.91 },
+    { "ambientC": 45, "factor": 0.87 },
+    { "ambientC": 50, "factor": 0.82 }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "norma": "AEA 90364-7-771",
+  "types": [
+    {
+      "id": "outlets",
+      "label": "Tomacorrientes general",
+      "minSectionMm2": 2.5,
+      "exclusiveConduit": false
+    },
+    {
+      "id": "lighting",
+      "label": "Iluminación",
+      "minSectionMm2": 1.5,
+      "exclusiveConduit": false
+    },
+    {
+      "id": "ac",
+      "label": "Aire acondicionado",
+      "minSectionMm2": 2.5,
+      "exclusiveConduit": true
+    },
+    {
+      "id": "shower",
+      "label": "Ducha eléctrica",
+      "minSectionMm2": 4,
+      "exclusiveConduit": true
+    },
+    {
+      "id": "oven",
+      "label": "Horno / cocina eléctrica",
+      "minSectionMm2": 4,
+      "exclusiveConduit": true
+    },
+    {
+      "id": "ev",
+      "label": "Carga VE / Wallbox",
+      "minSectionMm2": 2.5,
+      "exclusiveConduit": true
+    },
+    {
+      "id": "special",
+      "label": "Circuito especial / lavarropas",
+      "minSectionMm2": 2.5,
+      "exclusiveConduit": true
+    },
+    {
+      "id": "other",
+      "label": "Otro / sin mínimo adicional",
+      "minSectionMm2": 0,
+      "exclusiveConduit": false
+    }
+  ]
+}

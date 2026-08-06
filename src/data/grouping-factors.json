@@ -1,0 +1,12 @@
+{
+  "norma": "AEA 90364 Tabla 771.16.II",
+  "aeaGeneralCircuitLimit": 3,
+  "factors": [
+    { "circuits": 1, "factor": 1.0 },
+    { "circuits": 2, "factor": 0.8 },
+    { "circuits": 3, "factor": 0.7 },
+    { "circuits": 4, "factor": 0.65 },
+    { "circuits": 5, "factor": 0.6 },
+    { "circuits": 6, "factor": 0.57 }
+  ]
+}

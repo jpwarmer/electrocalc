@@ -1,0 +1,8 @@
+{
+  "methods": [
+    { "id": "A", "label": "Mét. A — embutido sin caño", "factor": 0.87 },
+    { "id": "B1", "label": "Mét. B1 — caño en/sobre pared", "factor": 1.0 },
+    { "id": "E", "label": "Mét. E — al aire libre", "factor": 1.4 },
+    { "id": "D", "label": "Mét. D — enterrado", "factor": 0.9 }
+  ]
+}

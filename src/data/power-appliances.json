@@ -1,0 +1,18 @@
+{
+  "appliances": [
+    { "id": "oven", "label": "Horno eléctrico", "powerW": 2500, "fp": 1, "category": "cocina" },
+    { "id": "microwave", "label": "Microondas", "powerW": 1200, "fp": 1, "category": "cocina" },
+    { "id": "fridge", "label": "Heladera", "powerW": 150, "fp": 0.85, "category": "cocina" },
+    { "id": "kettle", "label": "Pava eléctrica", "powerW": 2000, "fp": 1, "category": "cocina" },
+    { "id": "ac_1000", "label": "Aire ~1000W consumo", "powerW": 1000, "fp": 0.85, "category": "clima" },
+    { "id": "ac_1500", "label": "Aire ~1500W consumo", "powerW": 1500, "fp": 0.85, "category": "clima" },
+    { "id": "ac_2800", "label": "Aire ~2800W consumo", "powerW": 2800, "fp": 0.85, "category": "clima" },
+    { "id": "heater", "label": "Calefactor", "powerW": 1500, "fp": 1, "category": "clima" },
+    { "id": "washer", "label": "Lavarropas", "powerW": 500, "fp": 0.85, "category": "lavadero" },
+    { "id": "shower", "label": "Ducha eléctrica", "powerW": 4500, "fp": 1, "category": "lavadero" },
+    { "id": "water_heater", "label": "Termotanque", "powerW": 1500, "fp": 1, "category": "lavadero" },
+    { "id": "led20", "label": "LED 20W", "powerW": 20, "fp": 1, "category": "iluminacion" },
+    { "id": "tv", "label": "TV LED 50\"", "powerW": 120, "fp": 1, "category": "iluminacion" },
+    { "id": "motor_1hp", "label": "Motor 1HP", "powerW": 750, "fp": 0.85, "category": "motor" }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "methods": [
+    {
+      "id": "B1",
+      "label": "Mét. B1 — cañería embutida en pared",
+      "factor": 1.0
+    },
+    {
+      "id": "E",
+      "label": "Mét. E — bandeja portacables abierta",
+      "factor": 1.29
+    },
+    {
+      "id": "E_open",
+      "label": "Mét. E — al aire libre / superficie",
+      "factor": 1.4
+    }
+  ]
+}

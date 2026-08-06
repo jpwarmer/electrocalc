@@ -1,0 +1,17 @@
+{
+  "insulation": "PVC",
+  "tempRatingC": 70,
+  "referenceMethod": "B1",
+  "referenceTempC": 30,
+  "material": "Cu",
+  "conductors": [
+    { "sectionMm2": 1.5, "izMono": 15, "izTri": 13, "maxIn": 10 },
+    { "sectionMm2": 2.5, "izMono": 21, "izTri": 18, "maxIn": 20 },
+    { "sectionMm2": 4.0, "izMono": 27, "izTri": 24, "maxIn": 25 },
+    { "sectionMm2": 6.0, "izMono": 36, "izTri": 32, "maxIn": 32 },
+    { "sectionMm2": 10.0, "izMono": 50, "izTri": 44, "maxIn": 40 },
+    { "sectionMm2": 16.0, "izMono": 66, "izTri": 59, "maxIn": 63 },
+    { "sectionMm2": 25.0, "izMono": 88, "izTri": 78, "maxIn": 80 },
+    { "sectionMm2": 35.0, "izMono": 110, "izTri": 96, "maxIn": 100 }
+  ]
+}

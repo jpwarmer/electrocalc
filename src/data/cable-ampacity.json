@@ -1,0 +1,22 @@
+{
+  "referenceMethod": "B1",
+  "referenceTempC": 30,
+  "material": "Cu",
+  "sections": [
+    { "sectionMm2": 1.5, "izPvc": 15, "izXlpe": 19, "maxIn": 10 },
+    { "sectionMm2": 2.5, "izPvc": 21, "izXlpe": 25, "maxIn": 16 },
+    { "sectionMm2": 4, "izPvc": 27, "izXlpe": 33, "maxIn": 20 },
+    { "sectionMm2": 6, "izPvc": 36, "izXlpe": 43, "maxIn": 32 },
+    { "sectionMm2": 10, "izPvc": 50, "izXlpe": 59, "maxIn": 40 },
+    { "sectionMm2": 16, "izPvc": 66, "izXlpe": 79, "maxIn": 63 },
+    { "sectionMm2": 25, "izPvc": 88, "izXlpe": 114, "maxIn": 63 },
+    { "sectionMm2": 35, "izPvc": 110, "izXlpe": 142, "maxIn": 80 },
+    { "sectionMm2": 50, "izPvc": 134, "izXlpe": 173, "maxIn": 100 },
+    { "sectionMm2": 70, "izPvc": 171, "izXlpe": 221, "maxIn": 125 },
+    { "sectionMm2": 95, "izPvc": 207, "izXlpe": 267, "maxIn": 160 },
+    { "sectionMm2": 120, "izPvc": 239, "izXlpe": 308, "maxIn": 200 },
+    { "sectionMm2": 150, "izPvc": 275, "izXlpe": 355, "maxIn": 250 },
+    { "sectionMm2": 185, "izPvc": 315, "izXlpe": 406, "maxIn": 315 },
+    { "sectionMm2": 240, "izPvc": 370, "izXlpe": 477, "maxIn": 315 }
+  ]
+}

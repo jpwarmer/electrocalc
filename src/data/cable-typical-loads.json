@@ -1,0 +1,13 @@
+{
+  "loads": [
+    { "id": "light_500", "label": "Iluminación 500W", "powerW": 500, "powerFactor": 1, "circuitType": "single", "circuitKind": "lighting", "insulation": "pvc" },
+    { "id": "outlets_3520", "label": "Tomacorrientes 3520W", "powerW": 3520, "powerFactor": 1, "circuitType": "single", "circuitKind": "outlets", "insulation": "pvc" },
+    { "id": "ac_2200", "label": "Aire acond. 2200W", "powerW": 2200, "powerFactor": 0.85, "circuitType": "single", "circuitKind": "ac", "insulation": "pvc" },
+    { "id": "oven_2500", "label": "Horno 2500W", "powerW": 2500, "powerFactor": 1, "circuitType": "single", "circuitKind": "oven", "insulation": "pvc" },
+    { "id": "shower_5500", "label": "Ducha 5500W", "powerW": 5500, "powerFactor": 1, "circuitType": "single", "circuitKind": "shower", "insulation": "pvc" },
+    { "id": "ev_mode2", "label": "VE Modo 2 ~2.2kW", "powerW": 2200, "powerFactor": 1, "circuitType": "single", "circuitKind": "ev", "insulation": "pvc" },
+    { "id": "ev_7_4", "label": "Wallbox 7.4kW", "powerW": 7400, "powerFactor": 1, "circuitType": "single", "circuitKind": "ev", "insulation": "pvc" },
+    { "id": "ev_11", "label": "Wallbox 11kW", "powerW": 11000, "powerFactor": 1, "circuitType": "three", "circuitKind": "ev", "insulation": "pvc" },
+    { "id": "ev_22", "label": "Wallbox 22kW", "powerW": 22000, "powerFactor": 1, "circuitType": "three", "circuitKind": "ev", "insulation": "pvc" }
+  ]
+}

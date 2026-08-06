@@ -1,0 +1,92 @@
+{
+  "loads": [
+    {
+      "id": "led_100",
+      "label": "Iluminación LED (100W)",
+      "powerW": 100,
+      "powerFactor": 1.0,
+      "loadType": "resistive",
+      "circuitType": "single"
+    },
+    {
+      "id": "termotanque_2k",
+      "label": "Termotanque eléctrico 2kW",
+      "powerW": 2000,
+      "powerFactor": 1.0,
+      "loadType": "resistive",
+      "circuitType": "single"
+    },
+    {
+      "id": "cocina_6k",
+      "label": "Cocina eléctrica 6000W",
+      "powerW": 6000,
+      "powerFactor": 1.0,
+      "loadType": "resistive",
+      "circuitType": "single"
+    },
+    {
+      "id": "aa_3500",
+      "label": "A/A split 3500W",
+      "powerW": 3500,
+      "powerFactor": 0.85,
+      "loadType": "inductive",
+      "circuitType": "single"
+    },
+    {
+      "id": "aa_inv_4500",
+      "label": "A/A split inverter 4500W",
+      "powerW": 4500,
+      "powerFactor": 0.85,
+      "loadType": "inverter",
+      "circuitType": "single"
+    },
+    {
+      "id": "ev_7_2k",
+      "label": "Cargador EV 7.2kW",
+      "powerW": 7200,
+      "powerFactor": 1.0,
+      "loadType": "inverter",
+      "circuitType": "single"
+    },
+    {
+      "id": "bomba_1hp",
+      "label": "Bomba sumergible 1HP",
+      "powerW": 750,
+      "powerFactor": 0.8,
+      "loadType": "motor",
+      "circuitType": "single"
+    },
+    {
+      "id": "compresor_1_5k",
+      "label": "Compresor hermético 1.5kW",
+      "powerW": 1500,
+      "powerFactor": 0.8,
+      "loadType": "motor",
+      "circuitType": "single"
+    },
+    {
+      "id": "bomba_0_75hp",
+      "label": "Bomba de agua 0.75HP",
+      "powerW": 800,
+      "powerFactor": 0.8,
+      "loadType": "motor",
+      "circuitType": "single"
+    },
+    {
+      "id": "motor_tri_10hp",
+      "label": "Motor trifásico 10HP",
+      "powerW": 7500,
+      "powerFactor": 0.8,
+      "loadType": "motor",
+      "circuitType": "three"
+    },
+    {
+      "id": "compresor_ind",
+      "label": "Compresor industrial",
+      "powerW": 15000,
+      "powerFactor": 0.8,
+      "loadType": "motor",
+      "circuitType": "three"
+    }
+  ]
+}

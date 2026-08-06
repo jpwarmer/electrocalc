@@ -1,0 +1,10 @@
+{
+  "copper70C": 0.0225,
+  "aluminum70C": 0.036,
+  "sectionsMm2": [1.5, 2.5, 4, 6, 10, 16, 25, 35, 50, 70, 95, 120, 150, 185, 240],
+  "limits": {
+    "lightingOutletsPercent": 3,
+    "motorPercent": 5,
+    "totalPercent": 5
+  }
+}
