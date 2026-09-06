@@ -36,6 +36,18 @@ export const MENU_TOOLS: CalculatorTool[] = [
     href: '/calculators/power',
   },
   {
+    id: 'thermal-power',
+    title: 'Frigorías / HP → A',
+    status: 'available',
+    href: '/calculators/thermal-power' as Href,
+  },
+  {
+    id: 'quick-ref',
+    title: 'Referencia cable–ITM',
+    status: 'available',
+    href: '/calculators/quick-ref' as Href,
+  },
+  {
     id: 'help',
     title: 'Ayuda y normas',
     status: 'available',

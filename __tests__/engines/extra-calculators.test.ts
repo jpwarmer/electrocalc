@@ -4,6 +4,8 @@ import {
 } from '@/src/engines/cable-section';
 import { calculateVoltageDropStandalone } from '@/src/engines/voltage-drop';
 import { calculatePower } from '@/src/engines/power';
+import { calculateThermalPower } from '@/src/engines/thermal-power';
+import { getCableItmQuickRef } from '@/src/engines/quickref';
 
 describe('cable section engine', () => {
   it('selects section for tomacorrientes 3520W', () => {
@@ -114,5 +116,60 @@ describe('power engine', () => {
       powerFactor: 0.85,
     });
     expect(r.powerW).toBeCloseTo(Math.sqrt(3) * 380 * 10 * 0.85, 2);
+  });
+});
+
+describe('thermal power / HP engine', () => {
+  it('converts 3000 frigorías with COP 3 to ~current', () => {
+    const thermalW = 3000 * 1.163;
+    const electricalW = thermalW / 3;
+    const expectedI = electricalW / (220 * 0.85);
+    const r = calculateThermalPower({
+      mode: 'frigorias',
+      value: 3000,
+      cop: 3,
+      efficiency: 0.85,
+      circuitType: 'single',
+      voltageV: 220,
+      powerFactor: 0.85,
+    });
+    expect(r.error).toBeUndefined();
+    expect(r.electricalW).toBeCloseTo(electricalW, 1);
+    expect(r.currentA).toBeCloseTo(expectedI, 2);
+  });
+
+  it('converts 1 HP motor to current', () => {
+    const electricalW = 746 / 0.85;
+    const expectedI = electricalW / (220 * 0.85);
+    const r = calculateThermalPower({
+      mode: 'hp',
+      value: 1,
+      cop: 3,
+      efficiency: 0.85,
+      circuitType: 'single',
+      voltageV: 220,
+      powerFactor: 0.85,
+    });
+    expect(r.error).toBeUndefined();
+    expect(r.mechanicalW).toBe(746);
+    expect(r.currentA).toBeCloseTo(expectedI, 2);
+  });
+});
+
+describe('cable–ITM quick reference', () => {
+  it('includes 1.5 mm² with ITM 6–10', () => {
+    const { rows } = getCableItmQuickRef();
+    const row = rows.find((r) => r.sectionMm2 === 1.5);
+    expect(row).toBeDefined();
+    expect(row!.itmMin).toBe(6);
+    expect(row!.itmMax).toBe(10);
+    expect(row!.itmRatings).toEqual([6, 10]);
+  });
+
+  it('includes 2.5 mm² with ITM 16–20', () => {
+    const { rows } = getCableItmQuickRef();
+    const row = rows.find((r) => r.sectionMm2 === 2.5);
+    expect(row!.itmMin).toBe(16);
+    expect(row!.itmMax).toBe(20);
   });
 });

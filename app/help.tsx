@@ -247,6 +247,40 @@ export default function HelpScreen() {
           </Accordion>
         </Group>
 
+        <Group title="Frigorías / HP → corriente">
+          <Accordion title="Frigorías y calorías a amperios">
+            <HelpText>
+              Las frigorías (fg) suelen ser capacidad térmica en kcal/h, no
+              consumo eléctrico.
+            </HelpText>
+            <FormulaBox>P = (fg × 1.163) / COP</FormulaBox>
+            <HelpText>
+              Luego I = P / (V × cos φ) en monofásico. COP típico de A·A: 2.5–3.5.
+            </HelpText>
+          </Accordion>
+
+          <Accordion title="HP a amperios">
+            <FormulaBox>P = (HP × 746) / η</FormulaBox>
+            <HelpText>
+              1 HP = 746 W mecánicos. η típico 0.80–0.90. En trifásico: I = P /
+              (√3 × V × cos φ).
+            </HelpText>
+          </Accordion>
+        </Group>
+
+        <Group title="Referencia cable–ITM">
+          <Accordion title="Tabla rápida de coordinación">
+            <HelpText>
+              Relación práctica Cu PVC 70°C, Mét. B1, 30°C. Ejemplo: 1.5 mm² →
+              ITM 6–10 A; 2.5 mm² → 16–20 A. Siempre In ≤ Iz.
+            </HelpText>
+            <HelpText>
+              Usá la pantalla «Referencia cable–ITM» del menú para ver todas las
+              secciones comerciales.
+            </HelpText>
+          </Accordion>
+        </Group>
+
         <Text style={styles.disclaimer}>
           Resultados orientativos. Verificá siempre con un electricista
           matriculado y las normas AEA 90364 / IRAM vigentes.

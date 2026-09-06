@@ -1,0 +1,102 @@
+{
+  "basis": "Cu PVC 70°C · Mét. B1 · 30°C · AEA 90364 / IEC 60364-5-52",
+  "rule": "In ≤ Iz · calibres IEC 60898 / IRAM",
+  "rows": [
+    {
+      "sectionMm2": 1.5,
+      "izMono": 15,
+      "izTri": 13,
+      "itmMin": 6,
+      "itmMax": 10,
+      "typicalUse": "Iluminación"
+    },
+    {
+      "sectionMm2": 2.5,
+      "izMono": 21,
+      "izTri": 18,
+      "itmMin": 16,
+      "itmMax": 20,
+      "typicalUse": "Tomacorrientes"
+    },
+    {
+      "sectionMm2": 4,
+      "izMono": 27,
+      "izTri": 24,
+      "itmMin": 20,
+      "itmMax": 25,
+      "typicalUse": "Tomas / A·A"
+    },
+    {
+      "sectionMm2": 6,
+      "izMono": 36,
+      "izTri": 32,
+      "itmMin": 25,
+      "itmMax": 32,
+      "typicalUse": "Cocina / ducha"
+    },
+    {
+      "sectionMm2": 10,
+      "izMono": 50,
+      "izTri": 44,
+      "itmMin": 32,
+      "itmMax": 40,
+      "typicalUse": "Tablero / acometida chica"
+    },
+    {
+      "sectionMm2": 16,
+      "izMono": 66,
+      "izTri": 59,
+      "itmMin": 40,
+      "itmMax": 63,
+      "typicalUse": "Alimentación principal"
+    },
+    {
+      "sectionMm2": 25,
+      "izMono": 88,
+      "izTri": 78,
+      "itmMin": 63,
+      "itmMax": 80,
+      "typicalUse": "Acometida"
+    },
+    {
+      "sectionMm2": 35,
+      "izMono": 110,
+      "izTri": 96,
+      "itmMin": 80,
+      "itmMax": 100,
+      "typicalUse": "Acometida grande"
+    },
+    {
+      "sectionMm2": 50,
+      "izMono": 134,
+      "izTri": 117,
+      "itmMin": 100,
+      "itmMax": 125,
+      "typicalUse": "Industrial / acometida"
+    },
+    {
+      "sectionMm2": 70,
+      "izMono": 171,
+      "izTri": 149,
+      "itmMin": 125,
+      "itmMax": 160,
+      "typicalUse": "Industrial"
+    },
+    {
+      "sectionMm2": 95,
+      "izMono": 207,
+      "izTri": 180,
+      "itmMin": 160,
+      "itmMax": 200,
+      "typicalUse": "Industrial"
+    },
+    {
+      "sectionMm2": 120,
+      "izMono": 239,
+      "izTri": 208,
+      "itmMin": 160,
+      "itmMax": 200,
+      "typicalUse": "Industrial"
+    }
+  ]
+}

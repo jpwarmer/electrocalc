@@ -74,6 +74,14 @@ export default function RootLayout() {
           options={calculatorHeaderOptions('Potencia')}
         />
         <Stack.Screen
+          name="calculators/thermal-power"
+          options={calculatorHeaderOptions('Frigorías / HP')}
+        />
+        <Stack.Screen
+          name="calculators/quick-ref"
+          options={calculatorHeaderOptions('Cable–ITM')}
+        />
+        <Stack.Screen
           name="help"
           options={calculatorHeaderOptions('Ayuda')}
         />
