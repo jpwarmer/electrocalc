@@ -14,7 +14,7 @@
       "package": "ar.electrocalc.app",
       "versionCode": 1,
       "adaptiveIcon": {
-        "backgroundColor": "#0F172A",
+        "backgroundColor": "#0A1424",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
@@ -33,7 +33,7 @@
         {
           "image": "./assets/images/splash-icon.png",
           "resizeMode": "contain",
-          "backgroundColor": "#0F172A"
+          "backgroundColor": "#0A1424"
         }
       ]
     ],

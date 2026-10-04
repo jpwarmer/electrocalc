@@ -247,6 +247,20 @@ export default function HelpScreen() {
           </Accordion>
         </Group>
 
+        <Group title="Consumo (kWh)">
+          <Accordion title="De amperes medidos a kWh mensuales">
+            <HelpText>
+              Con una corriente medida (pinza) y las horas de uso estimás la
+              energía del mes.
+            </HelpText>
+            <FormulaBox>E (kWh) = V × I × cos φ × h / 1000</FormulaBox>
+            <HelpText>
+              Ejemplo: 6 A × 2 h/día × 220 V × FP 1 → 2.64 kWh/día ≈ 79 kWh/mes
+              (30 días).
+            </HelpText>
+          </Accordion>
+        </Group>
+
         <Group title="Frigorías / HP → corriente">
           <Accordion title="Frigorías y calorías a amperios">
             <HelpText>

@@ -36,6 +36,12 @@ export const MENU_TOOLS: CalculatorTool[] = [
     href: '/calculators/power',
   },
   {
+    id: 'consumption',
+    title: 'Consumo (kWh)',
+    status: 'available',
+    href: '/calculators/consumption' as Href,
+  },
+  {
     id: 'thermal-power',
     title: 'Frigorías / HP → A',
     status: 'available',

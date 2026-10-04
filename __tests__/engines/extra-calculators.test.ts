@@ -6,6 +6,7 @@ import { calculateVoltageDropStandalone } from '@/src/engines/voltage-drop';
 import { calculatePower } from '@/src/engines/power';
 import { calculateThermalPower } from '@/src/engines/thermal-power';
 import { getCableItmQuickRef } from '@/src/engines/quickref';
+import { calculateConsumption } from '@/src/engines/consumption';
 
 describe('cable section engine', () => {
   it('selects section for tomacorrientes 3520W', () => {
@@ -171,5 +172,38 @@ describe('cable–ITM quick reference', () => {
     const row = rows.find((r) => r.sectionMm2 === 2.5);
     expect(row!.itmMin).toBe(16);
     expect(row!.itmMax).toBe(20);
+  });
+});
+
+describe('consumption engine', () => {
+  it('estimates monthly kWh from 6 A × 2 h/day @ 220 V', () => {
+    const r = calculateConsumption({
+      currentA: 6,
+      hours: 2,
+      period: 'day',
+      circuitType: 'single',
+      voltageV: 220,
+      powerFactor: 1,
+      daysPerMonth: 30,
+    });
+    expect(r.error).toBeUndefined();
+    expect(r.powerW).toBeCloseTo(1320, 1);
+    expect(r.kwhPerDay).toBeCloseTo(2.64, 2);
+    expect(r.kwhPerMonth).toBeCloseTo(79.2, 1);
+  });
+
+  it('converts weekly hours to monthly estimate', () => {
+    const r = calculateConsumption({
+      currentA: 10,
+      hours: 14,
+      period: 'week',
+      circuitType: 'single',
+      voltageV: 220,
+      powerFactor: 1,
+      daysPerMonth: 30,
+    });
+    // 14 h/week = 2 h/day → 2.2 kW × 2 × 30 = 132 kWh
+    expect(r.hoursPerDay).toBeCloseTo(2, 5);
+    expect(r.kwhPerMonth).toBeCloseTo(132, 1);
   });
 });
